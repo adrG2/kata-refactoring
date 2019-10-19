@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/FirstExercise/src" isTestSource="false" packagePrefix="FirstExercise\" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpunit/php-token-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/FirstExercise/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
