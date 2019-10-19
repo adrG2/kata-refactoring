@@ -1,5 +1,5 @@
 {
-    "name": "refactoring/second-exercise",
+    "name": "refactoring/third-exercise",
     "require": {
     },
     "require-dev": {
@@ -10,7 +10,7 @@
             "src/"
         ],
         "psr-4": {
-            "FirstExercise\\": "src/"
+            "ThirdExercise\\": "src/"
         }
     }
 }
