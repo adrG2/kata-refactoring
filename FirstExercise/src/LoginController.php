@@ -6,8 +6,6 @@ use Monolog\Handler\StreamHandler;
 
 class LoginController extends Controller
 {
-    private $view;
-
     public function login()
     {
         $logger = new \Monolog\Logger('userLog', [new StreamHandler(' /var/log/user_access.log')]);
