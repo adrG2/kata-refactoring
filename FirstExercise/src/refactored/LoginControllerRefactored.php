@@ -2,9 +2,11 @@
 
 namespace FirstExercise;
 
-final class LoginControllerRefactored extends Controller {
+class LoginControllerRefactored extends Controller {
 
 
+    final public function login() {
 
+    }
 
 }
