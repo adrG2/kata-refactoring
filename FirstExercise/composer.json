@@ -7,10 +7,10 @@
     },
     "autoload": {
         "classmap": [
-            "src"
+            "src/"
         ],
         "psr-4": {
-            "SecondExercise\\": "src"
+            "FirstExercise\\": "src/"
         }
     }
 }
