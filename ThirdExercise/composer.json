@@ -12,5 +12,8 @@
         "psr-4": {
             "ThirdExercise\\": "src/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true
     }
 }
