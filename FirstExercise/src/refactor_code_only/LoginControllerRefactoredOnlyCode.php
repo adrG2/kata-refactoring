@@ -29,8 +29,8 @@ final class LoginControllerRefactoredOnlyCode extends Controller
             $this->userNotLoggedTreatment($email);
         }
         session_start();
-            $this->logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $email]);
-            http_redirect('home');
+        $this->logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $email]);
+        http_redirect('home');
     }
 
     private function checkNullInputParams(string $email, string $password) : void {
@@ -46,19 +46,19 @@ final class LoginControllerRefactoredOnlyCode extends Controller
         //TODO Implementar escapado de carácteres para evitar SQL Injection
     }
 
-    public function userIsNotLogged($result): bool {
-        return !$this->isThereResult($result);
+    public function userIsNotLogged($user): bool {
+        return !$this->isThereResult($user);
     }
 
-    public function isThereResult($result): bool
+    public function isThereResult($resultQuery): bool
     {
-        return $result->num_rows > 0;
+        return $resultQuery->num_rows > 0;
     }
 
-    public function userNotLoggedTreatment(string $mail): void
+    public function userNotLoggedTreatment(string $mail)
     {
         $userWithEmail = $this->connection->query("SELECT * FROM users WHERE email = '{$email}'");
-        $this->isThereUserWithEmail($userWithEmail)
+        return $this->isThereUserWithEmail($userWithEmail)
             ? $this->view->message = "password incorrecto"
             : $this->view->message = "el email no existe";
     }
