@@ -31,9 +31,10 @@ final class UserLogin implements UserLoginRepository
         $stmt->execute();
     }
 
-    private function bindRestultToArray(mysqli $stmt) {
+    private function bindRestultToArray(mysqli $stmt)
+    {
         $stmt->store_result();
-        if($stmt->num_rows === 0) {
+        if ($stmt->num_rows === 0) {
             throw new UserNotExistsException("El usuario no existe");
         }
 
