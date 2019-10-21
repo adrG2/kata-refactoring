@@ -16,9 +16,7 @@ final class LoginControllerRefactored extends Controller
 
     public function login(string $email, string $password): void
     {
-        if ( !$this->login($email, $password) ) {
-
-        }
+        $user = $this->userLoginUseCase->login($email, $password);
         session_start();
         http_redirect('home');
     }

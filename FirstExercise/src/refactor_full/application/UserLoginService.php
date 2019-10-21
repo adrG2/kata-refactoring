@@ -7,21 +7,26 @@ final class UserLoginService implements UserLoginUseCase
 
     private $userLoginRepository;
     private $logger;
-    private $password;
+    private $passwordEncoder;
 
 
     public function __construct(UserLoginRepository $userLoginRepository, LoggerMonolog $logger, PasswordEncoder $passwordEncoder)
     {
         $this->userLoginRepository = $userLoginRepository;
         $this->logger = $logger;
-        $this->password = $passwordEncoder;
+        $this->passwordEncoder = $passwordEncoder;
     }
 
 
-    public function login(string $email, PasswordEncoder $passwordEncoder): bool
+    public function login(string $email, string $password): \User
     {
-        if( $this->userLoginRepository->getByEmailAndPassWord($email, $passwordEncoder) ) {
-            $this->logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $email]);
+        $passwordEncoder = $this->passwordEncoder->encode($password);
+        $user = $this->userLoginRepository->getByEmailAndPassWord($email, $passwordEncoder);
+        $this->logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $email]);
+        if(isNull($user)) {
+            $user = $this->userLoginRepository->getByEmail($email);
         }
     }
+
+
 }
