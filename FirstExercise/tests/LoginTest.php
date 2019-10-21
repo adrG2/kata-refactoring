@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-use FirstExercise\LoginException;
+use FirstExercise\UserNotExistsException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use FirstExercise\LoginController;
+use FirstExercise\LoginControllerRefactored;
 
 final class LoginTest extends TestCase
 {

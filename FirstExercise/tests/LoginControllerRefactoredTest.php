@@ -12,15 +12,11 @@ class LoginControllerRefactoredTest extends TestCase
 
     final public function setUp(): void
     {
-        $this->loginControllerStub = $this->getMockBuilder(LoginControllerRefactored::class)
+        $this->loginControllerStub = $this->getMockBuilder("")
             ->setMethods(['login'])
             ->getMock();
     }
 
 
-    final public function testExceptionLoginMethod(): void
-    {
-        //$this->loginControllerStub->method('login')->willThrowException(LoginException::userNotExists(1));
-    }
 
 }
