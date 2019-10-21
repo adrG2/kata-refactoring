@@ -26,7 +26,8 @@ class Person implements Figure
     public function jump()
     {
         $x = $position->getX();
-        $x += $someWeirdNumber /* + some weird math */;
+        $x += $someWeirdNumber /* + some weird math */
+        ;
         $position->setX($x);
     }
 

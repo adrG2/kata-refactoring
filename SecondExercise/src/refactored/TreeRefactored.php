@@ -20,7 +20,7 @@ final class TreeRefactored implements FigureRefactored
         $this->position->rotate($degrees);
     }
 
-    public function getName():string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -35,7 +35,7 @@ final class TreeRefactored implements FigureRefactored
         $this->name = $name;
     }
 
-    public function getPosition():Position
+    public function getPosition(): Position
     {
         // TODO: Implement getPosition() method.
     }

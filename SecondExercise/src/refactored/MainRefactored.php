@@ -45,7 +45,7 @@ final class MainRefactored
     }
 
 
-    private function addFigureInGameScreen($positionX, $positionY, $nameFigure) : void
+    private function addFigureInGameScreen($positionX, $positionY, $nameFigure): void
     {
         GameScreen::put($positionX, $positionY, $nameFigure);
     }

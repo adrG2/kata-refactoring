@@ -25,10 +25,11 @@ final class PersonRefactored implements FigureRefactored
         $this->color = $color;
     }
 
-    public function jump():void
+    public function jump(): void
     {
         $x = $this->position->getX();
-        $x += $this->someWeirdNumber /* + some weird math */;
+        $x += $this->someWeirdNumber /* + some weird math */
+        ;
         $this->position->setX($x);
 
     }
@@ -63,10 +64,13 @@ final class PersonRefactored implements FigureRefactored
         // TODO: Implement getPosition() method.
     }
 
-    public function positionCoordinateX() {
+    public function positionCoordinateX()
+    {
         $this->position->getX();
     }
-    public function positionCoordinateY() {
+
+    public function positionCoordinateY()
+    {
         $this->position->getY();
     }
 }
