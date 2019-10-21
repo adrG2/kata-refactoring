@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use FirstExercise\LoginException;
+use FirstExercise\UserNotExistsException;
 use PHPUnit\Framework\TestCase;
-use FirstExercise\LoginController;
+use FirstExercise\LoginControllerRefactored;
 
 final class EncodeTest extends TestCase
 {
@@ -12,7 +12,7 @@ final class EncodeTest extends TestCase
 
     public function setUp(): void
     {
-        //$this->stub = $this->createMock(LoginController::class);
+        //$this->stub = $this->createMock(LoginControllerRefactored::class);
     }
 
 }
