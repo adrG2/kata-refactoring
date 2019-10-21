@@ -6,30 +6,21 @@ namespace SecondExercise;
 
 final class TreeRefactored implements FigureRefactored
 {
-    protected $name;
+    private $name;
+    private $position;
 
-    public function __construct($name, $position)
+    public function __construct(string $name, Position $position)
     {
         $this->setName($name);
         $this->setPosition($position);
     }
 
-    public function jump()
+    public function rotate(int $degrees): void
     {
-        return;
+        $this->position->rotate($degrees);
     }
 
-    public function walk()
-    {
-        return;
-    }
-
-    public function rotate()
-    {
-        $position->rotate($degrees);
-    }
-
-    public function getName()
+    public function getName():string
     {
         return $this->name;
     }
@@ -44,7 +35,7 @@ final class TreeRefactored implements FigureRefactored
         $this->name = $name;
     }
 
-    public function getPosition()
+    public function getPosition():Position
     {
         // TODO: Implement getPosition() method.
     }

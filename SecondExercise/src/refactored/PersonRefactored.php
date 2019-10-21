@@ -10,8 +10,10 @@ final class PersonRefactored implements FigureRefactored
 
     protected $color;
     protected $name;
+    private $someWeirdNumber;
+    private $position;
 
-    public function __construct($name, $position, $color)
+    public function __construct($name, Position $position, $color)
     {
         $this->setName($name);
         $this->setPosition($position);
@@ -23,16 +25,17 @@ final class PersonRefactored implements FigureRefactored
         $this->color = $color;
     }
 
-    public function jump()
+    public function jump():void
     {
-        $x = $position->getX();
-        $x += $someWeirdNumber /* + some weird math */;
-        $position->setX($x);
+        $x = $this->position->getX();
+        $x += $this->someWeirdNumber /* + some weird math */;
+        $this->position->setX($x);
+
     }
 
-    public function rotate($degrees)
+    public function rotate(int $degrees): void
     {
-        $position->rotate($degrees);
+        $this->position->rotate($degrees);
     }
 
     public function walk()
@@ -58,6 +61,13 @@ final class PersonRefactored implements FigureRefactored
     public function getPosition()
     {
         // TODO: Implement getPosition() method.
+    }
+
+    public function positionCoordinateX() {
+        $this->position->getX();
+    }
+    public function positionCoordinateY() {
+        $this->position->getY();
     }
 }
 
