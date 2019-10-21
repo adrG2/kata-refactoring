@@ -1,7 +1,8 @@
 {
     "name": "refactoring/third-exercise",
     "require": {
-      "ext-mysqli": "*"
+      "ext-mysqli": "*",
+      "ext-http": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^8"
