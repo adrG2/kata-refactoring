@@ -1,9 +1,8 @@
 <?php
-declare(strict_types=1);
 
-use FirstExercise\LoginException;
+namespace SecondExercise;
+
 use PHPUnit\Framework\TestCase;
-use FirstExercise\LoginController;
 
 final class DrawTest extends TestCase
 {
