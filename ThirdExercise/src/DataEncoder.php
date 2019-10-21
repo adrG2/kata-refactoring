@@ -19,10 +19,10 @@ final class DataEncoder
     }
 
 
-    public function encode($data, Encoder $encoder): string
+    public function encode($data): string
     {
-        $data = $this->parseData->prepareData($data, $encoder);
-        return $encoder->encode($data);
+        $data = $this->parseData->prepareData($data, $this->encoder);
+        return $this->encoder->encode($data);
     }
 
 }
