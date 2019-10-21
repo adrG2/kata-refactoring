@@ -9,5 +9,4 @@ final class UserNotExistsException extends \Exception
 {
 
 
-
 }

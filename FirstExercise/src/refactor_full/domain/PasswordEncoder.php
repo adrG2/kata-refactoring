@@ -6,5 +6,5 @@ namespace FirstExercise;
 
 interface PasswordEncoder
 {
-    public function encode(string $password):String;
+    public function encode(string $password): String;
 }
