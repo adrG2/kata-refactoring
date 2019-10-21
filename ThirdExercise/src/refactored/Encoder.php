@@ -6,5 +6,5 @@ namespace ThirdExercise;
 
 interface Encoder
 {
-    public function encode(): string;
+    public function encode($data): string;
 }

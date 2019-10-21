@@ -9,7 +9,7 @@ use ThirdExercise\Encoder;
 class CsvEncoder implements Encoder, ParseData
 {
 
-    public function encode(): string
+    public function encode($data): string
     {
         return "";
     }

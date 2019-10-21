@@ -9,7 +9,7 @@ use ThirdExercise\Encoder;
 final class XmlEncoder implements Encoder, ParseData
 {
 
-    public function encode(): string
+    public function encode($data): string
     {
         return "";
     }
