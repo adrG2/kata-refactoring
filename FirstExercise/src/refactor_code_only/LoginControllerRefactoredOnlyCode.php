@@ -25,7 +25,7 @@ final class LoginControllerRefactoredOnlyCode extends Controller
         $this->sanitizeParams($email, $password);
         $userWithEmailAndPassword =
             $this->connection->query("SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'");
-        if ( $this->userIsNotLogged($userWithEmailAndPassword) ) {
+        if ($this->userIsNotLogged($userWithEmailAndPassword)) {
             $this->userNotLoggedTreatment($email);
         }
         session_start();
@@ -33,7 +33,8 @@ final class LoginControllerRefactoredOnlyCode extends Controller
         http_redirect('home');
     }
 
-    private function checkNullInputParams(string $email, string $password) : void {
+    private function checkNullInputParams(string $email, string $password): void
+    {
         $emailIsEmpty = empty(($email));
         $passwordIsEmpty = empty($password);
         if ($emailIsEmpty && $passwordIsEmpty) {
@@ -41,12 +42,13 @@ final class LoginControllerRefactoredOnlyCode extends Controller
         }
     }
 
-    private function sanitizeParams(string $email, string $password) : void
+    private function sanitizeParams(string $email, string $password): void
     {
         //TODO Implementar escapado de carácteres para evitar SQL Injection
     }
 
-    public function userIsNotLogged($user): bool {
+    public function userIsNotLogged($user): bool
+    {
         return !$this->isThereResult($user);
     }
 
