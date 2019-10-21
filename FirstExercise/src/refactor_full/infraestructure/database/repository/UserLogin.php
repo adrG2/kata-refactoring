@@ -5,6 +5,7 @@ namespace FirstExercise;
 use http\Exception\InvalidArgumentException;
 use mysqli;
 
+//TODO Acabar implementación de la funcionalidad de esta clase.
 final class UserLogin implements UserLoginRepository
 {
 
