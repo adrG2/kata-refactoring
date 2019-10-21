@@ -2,35 +2,70 @@
 
 namespace FirstExercise;
 
+use http\Exception\InvalidArgumentException;
 use Monolog\Handler\StreamHandler;
 
-class LoginController extends Controller
+final class LoginControllerRefactoredOnlyCode extends Controller
 {
 
     private $logger;
+    private $connection;
 
-    public function __construct(LoggerMonolog $logger)
+    public function __construct(LoggerMonolog $logger, DBConnection $connection)
     {
         $this->logger = $logger;
+        $this->connection = $connection;
     }
 
     public function login()
     {
-        if ((!empty($_GET['email'])) && (!empty($_GET['password']))) {
-            $db = mysqli_connect("84.10.20.87", "root", "admin1234", "db");
-            $r1 = $db->query("SELECT * FROM users WHERE email = '{$_GET['email']}' AND password = '{$_GET['password']}'");
-            if ($r1->num_rows > 0) {
-                session_start();
-                $logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $_GET['email']]);
-                http_redirect('home');
-            } else {
-                $r2 = $db->query("SELECT * FROM users WHERE email = '{$_GET['email']}'");
-                if ($r2->num_rows > 0) {
-                    $this->view->message = "password incorrecto";
-                } else {
-                    $this->view->message = "el email no existe";
-                }
-            }
+        $email = $_GET["email"];
+        $password = $_GET["password"];
+        $this->checkNullInputParams($_GET["email"], $_GET["password"]);
+        $this->sanitizeParams($email, $password);
+        $userWithEmailAndPassword =
+            $this->connection->query("SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'");
+        if ( $this->userIsNotLogged($userWithEmailAndPassword) ) {
+            $this->userNotLoggedTreatment($email);
+        }
+        session_start();
+            $this->logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $email]);
+            http_redirect('home');
+    }
+
+    private function checkNullInputParams(string $email, string $password) : void {
+        $emailIsEmpty = empty(($email));
+        $passwordIsEmpty = empty($password);
+        if ($emailIsEmpty && $passwordIsEmpty) {
+            throw new InvalidArgumentException("Parametros de entrada no validos");
         }
     }
+
+    private function sanitizeParams(string $email, string $password) : void
+    {
+        //TODO Implementar escapado de carácteres para evitar SQL Injection
+    }
+
+    public function userIsNotLogged($result): bool {
+        return !$this->isThereResult($result);
+    }
+
+    public function isThereResult($result): bool
+    {
+        return $result->num_rows > 0;
+    }
+
+    public function userNotLoggedTreatment(string $mail): void
+    {
+        $userWithEmail = $this->connection->query("SELECT * FROM users WHERE email = '{$email}'");
+        $this->isThereUserWithEmail($userWithEmail)
+            ? $this->view->message = "password incorrecto"
+            : $this->view->message = "el email no existe";
+    }
+
+    public function isThereUserWithEmail($userWithEmail): bool
+    {
+        return $this->isThereResult($userWithEmail);
+    }
+
 }
