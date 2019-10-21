@@ -58,7 +58,7 @@ final class LoginControllerRefactoredOnlyCode extends Controller
     public function userNotLoggedTreatment(string $mail)
     {
         $userWithEmail = $this->connection->query("SELECT * FROM users WHERE email = '{$email}'");
-        return $this->isThereUserWithEmail($userWithEmail)
+        $this->isThereUserWithEmail($userWithEmail)
             ? $this->view->message = "password incorrecto"
             : $this->view->message = "el email no existe";
     }
