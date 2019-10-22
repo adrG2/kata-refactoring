@@ -1,8 +1,6 @@
 <?php
 
-
 namespace ThirdExercise\refactored;
-
 
 use ThirdExercise\Encoder;
 
@@ -14,7 +12,7 @@ final class XmlEncoder implements Encoder, ParseData
         return "";
     }
 
-    public function prepareData($data, Encoder $encoder)
+    public function prepareData($data)
     {
         // TODO: Implement prepareData() method.
     }
