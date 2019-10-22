@@ -29,6 +29,7 @@ final class UserLoginService implements UserLoginUseCase
             $this->userNotLogged($email);
         }
         $this->logger->log(\Monolog\Logger::INFO, 'Usuario autenticado: %email%', ['email' => $user->getEmail()]);
+        return $user;
     }
 
 
